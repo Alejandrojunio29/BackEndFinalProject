@@ -14,6 +14,10 @@ app.get('/', (req, res) =>{
 
 app.use('/', routes)
 
+app.use((resp, req, res, next )=>{
+    res.status(resp.status).send(resp.send)
+})//middleware que maneja las respuesta, nos ayudara a no generar errores sincronia<
+
 app.listen(port, ()=>{
     console.log('Server is listening in port ' + port)
 })
