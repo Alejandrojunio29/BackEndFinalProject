@@ -1,0 +1,11 @@
+{
+  "name": "backendfinalproyect",
+  "version": "1.0.0",
+  "description": "Final Proyect of BackEnd",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karla Herzo, Max Alejandro",
+  "license": "ISC"
+}
