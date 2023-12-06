@@ -1,5 +1,5 @@
-const User = require("../models/users");
-const jwt = require("../utils/jwt");
+const User = require("../models/users.js");
+const jwt = require("../utils/jwt.js");
 
 module.exports = {
   getAll: async (req, res, next) => {
