@@ -12,7 +12,7 @@ app.use(express.json()); //Vamos a recibir bodies tipo JSon, nuestro backend Api
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  res.send("ok");
+  res.send("DB connected and listening");
 });
 
 app.use("/", routes);
