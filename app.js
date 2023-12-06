@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
+const publicRoutes = require("./src/public/routes");
+const jwt = require("./src/utils/jwt");
 const routes = require("./src/routes/index");
 const db = require("./src/utils/db");
 const app = express();
@@ -10,6 +12,9 @@ db.connect();
 
 app.use(express.json()); //Vamos a recibir bodies tipo JSon, nuestro backend Api rest
 app.use(morgan("dev"));
+
+app.use("/", publicRoutes);
+app.use("/api", jwt.verify, routes);
 
 app.get("/", (req, res) => {
   res.send("DB connected and listening");
