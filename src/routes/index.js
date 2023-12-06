@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 
-const pathRouter = `${__dirname}`;//__dirname =variable global 
+const pathRouter = `${__dirname}`; //__dirname =variable global
 //que nos va a identificar la ruta relativa de nuestra aplicacion
 
 const removeExtension = (fileName) => {
