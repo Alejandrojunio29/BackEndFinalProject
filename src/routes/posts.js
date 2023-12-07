@@ -3,7 +3,7 @@ const router = express.Router(); //es lo que nos permite crear rutas fuera de nu
 const postController = require("../controllers/posts");
 
 router.get("/", postController.getAll);
-router.get("/:id", postController.getById);
+router.get("/", postController.getById);
 router.post("/", postController.post);
 router.put("/api/:id", postController.put);
 router.delete("/api/:id", postController.delete);
