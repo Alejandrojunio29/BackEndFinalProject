@@ -14,8 +14,8 @@ module.exports = {
   },
   getById: async (req, res, next) => {
     try {
-      const { id } = req.params;
-      let post = await Post.findById(id);
+      const { _id } = req.params;
+      let post = await Post.findById(_id);
       next({ status: 200, send: { msg: "Post encontrado", data: post } });
     } catch (error) {
       next({ status: 404, send: { msg: "Post no encontrado", data: error } });
