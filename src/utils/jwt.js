@@ -7,7 +7,7 @@ module.exports = {
   //Create crea el token
   create: (data) => {
     let token = jwt.sign({ _id: data._id, email: data.email }, JWT_SECRET, {
-      expiresIn: 6000,
+      expiresIn: "60000ms",
     });
     return token;
   },
