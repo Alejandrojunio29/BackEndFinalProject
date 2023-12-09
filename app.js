@@ -7,14 +7,14 @@ const routes = require("./src/routes/index");
 const db = require("./src/utils/db");
 const app = express();
 const port = process.env.PORT || 3002;
-const cors = require("cors")
+const cors = require("cors");
 
 db.connect();
 
 app.use(express.json()); //Vamos a recibir bodies tipo JSon, nuestro backend Api rest
 app.use(morgan("dev"));
 
-app.use(cors('*'))
+app.use(cors("*"));
 app.use("/", publicRoutes);
 app.use("/api", jwt.verify, routes);
 
