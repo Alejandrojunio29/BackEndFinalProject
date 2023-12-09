@@ -16,6 +16,8 @@ module.exports = {
     try {
       const { id } = req.params;
       let post = await Post.findById(id);
+      console.log("post", post);
+      console.log("id", id);
       next({ status: 200, send: { msg: "Post encontrado", data: post } });
     } catch (error) {
       next({ status: 404, send: { msg: "Post no encontrado", data: error } });

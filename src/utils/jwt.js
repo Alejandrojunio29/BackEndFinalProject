@@ -6,7 +6,7 @@ const User = require("../models/users.js");
 module.exports = {
   //Create crea el token
   create: (data) => {
-    let token = jwt.sign({ _id: data._id, email: data.email }, JWT_SECRET, {
+    let token = jwt.sign({ email: data.email, id: data._id }, JWT_SECRET, {
       expiresIn: "60000ms",
     });
     return token;

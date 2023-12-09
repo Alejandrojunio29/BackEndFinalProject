@@ -65,6 +65,12 @@ module.exports = {
         next({ status: 401, send: { msg: "Password incorrecto" } });
       }
       let token = jwt.create(user);
+
+      // if (token) {
+      //   jwt.create(user);
+      // } else {
+      //   throw { status: 400, send: { msg: "Accseso no autorizado" } };
+      // }
       next({ status: 200, send: { msg: "Accseso autorizado", token: token } });
     } catch (error) {
       next({ status: 401, send: { msg: "Acceso no autorizado", err: error } });
